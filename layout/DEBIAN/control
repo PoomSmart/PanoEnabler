@@ -1,0 +1,17 @@
+Author: PoomSmart & Pix3lDemon <poomst@hotmail.com>
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: PanoMod
+Package: org.thebigboss.panomod
+Depends: preferenceloader, mobilesubstrate (>= 0.9.5101)
+Pre-Depends: gsc.still-camera, firmware (>= 6.0), firmware (<< 10.0)
+Conflicts: cy+model.iphone (= 2.1)
+Section: Tweaks
+Version: 1.6
+Architecture: iphoneos-arm
+Description: Enable Panorama and customize it.
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=panomodDp
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=panomodDp
+Sponsor: thebigboss.org <http://thebigboss.org>
+dev: poomst
+Tag: purpose::extension, role::enduser
+Icon: file:///Library/PreferenceBundles/PanoPreferences.bundle/PanoPreferences@2x.png

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+chk=$(uname -m)
+
+if [[ "$chk" != iPod5* ]] && [[ "$chk" != iPod6* ]] && [[ "$chk" != iPhone4* ]] && [[ "$chk" != iPhone5* ]] && [[ "$chk" != iPhone6* ]] && [[ "$chk" != iPhone7* ]] && [[ "$chk" != iPhone8* ]] && [[ "$chk" != iPhone9* ]] && [[ "$chk" == iPad5* ]] && [[ "$chk" == iPad6* ]] && [[ "$chk" == iPad7* ]];then
+	cd /System/Library/PrivateFrameworks/PhotoLibrary.framework
+	rm -f firebreak-*.png
+	rm -f PLCameraButtonPano*_2only_.png
+fi

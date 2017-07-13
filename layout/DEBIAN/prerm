@@ -1,0 +1,15 @@
+#!/bin/sh
+
+declare -a cydia
+cydia=($CYDIA)
+chk=$(uname -m)
+
+launchctl unload /Library/LaunchDaemons/com.ps.panomod.helper.plist
+
+if [[ $1 == remove ]]; then
+   	PanoRemover
+
+    if [[ ${CYDIA+@} ]]; then
+       	eval "echo 'finish:restart' >&${cydia[0]}"
+    fi
+fi

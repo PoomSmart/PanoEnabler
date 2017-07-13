@@ -1,0 +1,22 @@
+#!/bin/sh
+
+declare -a cydia
+cydia=($CYDIA)
+chk=$(uname -m)
+
+if [[ $1 == install ]]; then
+	if [[ "$chk" == iPhone3* ]] || [[ "$chk" == "iPod4,1" ]] || [[ "$chk" == iPad* ]]; then
+   		PanoInstaller
+   		if [ $? = 0 ]; then
+        	if [[ ${CYDIA+@} ]]; then
+        		echo "You may need a reboot."
+          		eval "echo 'finish:restart' >&${cydia[0]}"
+        	fi
+      	  	exit 0
+   	 	else
+       		exit 1
+   		fi
+   	fi
+fi
+
+

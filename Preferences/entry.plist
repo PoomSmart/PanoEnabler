@@ -1,0 +1,10 @@
+{
+	entry = {
+		bundle = "PanoPreferences";
+		cell = PSLinkCell;
+		detail = "PanoPreferenceController";
+		icon = "PanoPreferences.png";
+		isController = 1;
+		label = "PanoMod";
+	};
+}

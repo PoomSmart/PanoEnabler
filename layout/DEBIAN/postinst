@@ -1,0 +1,25 @@
+#!/bin/sh
+
+chk=$(uname -m)
+
+if [[ -d /System/Library/PrivateFrameworks/CameraUI.framework ]];then
+	rm -f /Library/LaunchDaemons/com.ps.panomod.helper.plist
+else
+	chown 0:0 /Library/LaunchDaemons/com.ps.panomod.helper.plist
+	chmod 644 /Library/LaunchDaemons/com.ps.panomod.helper.plist
+	launchctl load /Library/LaunchDaemons/com.ps.panomod.helper.plist
+fi
+
+if [[ "$chk" == iPod5* ]] || [[ "$chk" == iPod6* ]] || [[ "$chk" == iPhone4* ]] || [[ "$chk" == iPhone5* ]] || [[ "$chk" == iPhone6* ]] || [[ "$chk" == iPhone7* ]] || [[ "$chk" == iPhone8* ]] || [[ "$chk" == iPhone9* ]] || [[ "$chk" == iPad5* ]] || [[ "$chk" == iPad6* ]] || [[ "$chk" == iPad7* ]];then
+	rm -f /Library/MobileSubstrate/DynamicLibraries/PanoHook*
+	rm -f /Library/MobileSubstrate/DynamicLibraries/actFix*
+else
+	if [[ "$chk" == iPad* ]];then
+		rm -f /Library/MobileSubstrate/DynamicLibraries/actFix*
+	fi
+	cp /Library/PanoModUI/*.png /System/Library/PrivateFrameworks/PhotoLibrary.framework
+fi
+
+killall RootHelper
+
+rm -rf /Library/PanoModUI
